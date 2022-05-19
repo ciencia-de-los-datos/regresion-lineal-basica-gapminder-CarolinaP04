@@ -15,7 +15,7 @@ def pregunta_01():
     Complete el código presentado a continuación.
     """
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv("gm_2008_region.csv",sep=",",header=0,)
+    df = pd.read_csv("gm_2008_region.csv",thousands=None,decimal=".",)
 
     # Asigne la columna "life" a `y` y la columna "fertility" a `X`
     y = df["life"]
@@ -28,10 +28,10 @@ def pregunta_01():
     print(X.shape)
 
     # Transforme `y` a un array de numpy usando reshape
-    y_reshaped = y.values.reshape(139, 1)
+    y_reshaped = y.reshape(139, 1)
 
     # Trasforme `X` a un array de numpy usando reshape
-    X_reshaped = X.values.reshape(139, 1)
+    X_reshaped = X.reshape(139, 1)
 
     # Imprima las nuevas dimensiones de `y`
     print(y_reshaped.shape)
